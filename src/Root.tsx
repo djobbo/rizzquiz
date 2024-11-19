@@ -1,8 +1,8 @@
-import { Composition, staticFile } from "remotion";
-import { AnimeQuiz } from "./AnimeQuiz";
-import { quizSchema } from "./types/quiz";
+import { Composition, staticFile } from "remotion"
+import { AnimeQuiz } from "./AnimeQuiz"
+import { quizSchema } from "./types/quiz"
 
-export const RemotionRoot: React.FC = () => {
+export const RemotionRoot = () => {
   return (
     <>
       <Composition
@@ -38,12 +38,12 @@ export const RemotionRoot: React.FC = () => {
               correctAnswer: 0,
               moveClip: "assets/rasengan.mp4",
               emoji: "💥",
-            }
+            },
           ],
           backgroundColor: "#1A1A2d",
-          accentColor: "#FF00FF"
+          accentColor: "#FF00FF",
         }}
       />
     </>
-  );
-};
+  )
+}

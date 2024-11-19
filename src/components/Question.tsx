@@ -1,17 +1,19 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "remotion"
 
-export const Question: React.FC<{
-  text: string;
-  accentColor: string;
-}> = ({ text, accentColor }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+type QuestionProps = {
+  readonly text: string
+  readonly accentColor: string
+}
+
+export const Question = ({ text, accentColor }: QuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <div
@@ -35,5 +37,5 @@ export const Question: React.FC<{
         {text}
       </h1>
     </div>
-  );
-};
+  )
+}

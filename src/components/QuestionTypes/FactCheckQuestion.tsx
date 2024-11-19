@@ -1,18 +1,15 @@
-
-import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion"
 
 interface FactCheckQuestionProps {
   readonly facts: Array<{
-    text: string;
-    isTrue: boolean;
-  }>;
+    text: string
+    isTrue: boolean
+  }>
 }
 
-export const FactCheckQuestion: React.FC<FactCheckQuestionProps> = ({
-  facts,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+export const FactCheckQuestion = ({ facts }: FactCheckQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   return (
     <AbsoluteFill
@@ -30,7 +27,7 @@ export const FactCheckQuestion: React.FC<FactCheckQuestionProps> = ({
           frame: frame - index * 5,
           fps,
           config: { mass: 0.5, damping: 10 },
-        });
+        })
 
         return (
           <div
@@ -48,8 +45,8 @@ export const FactCheckQuestion: React.FC<FactCheckQuestionProps> = ({
           >
             {fact.text}
           </div>
-        );
+        )
       })}
     </AbsoluteFill>
-  );
-};
+  )
+}

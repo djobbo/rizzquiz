@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Anime Quiz Videos for TikTok",
   "scripts": {
-    "dev": "remotionb studio",
-    "build": "remotionb render AnimeQuiz out/video.mp4",
-    "upgrade": "remotionb upgrade",
+    "dev": "bunx --bun remotionb studio",
+    "build": "bunx --bun remotionb render AnimeQuiz out/video.mp4",
+    "upgrade": "bunx --bun remotionb upgrade",
     "lint": "eslint src --ext ts,tsx,js,jsx --fix",
     "check:types": "tsc --noEmit"
   },
@@ -23,6 +23,7 @@
     "@types/react": "18.3.1",
     "@types/web": "0.0.166",
     "eslint": "8.56.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "prettier": "3.3.3",
     "typescript": "5.6.2"
   }

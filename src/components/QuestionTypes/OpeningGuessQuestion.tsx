@@ -1,21 +1,26 @@
-
-import { AbsoluteFill, Audio, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import {
+  AbsoluteFill,
+  Audio,
+  spring,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion"
 
 interface OpeningGuessQuestionProps {
-  readonly audioClip: string;
+  readonly audioClip: string
 }
 
-export const OpeningGuessQuestion: React.FC<OpeningGuessQuestionProps> = ({
+export const OpeningGuessQuestion = ({
   audioClip,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+}: OpeningGuessQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <AbsoluteFill
@@ -37,5 +42,5 @@ export const OpeningGuessQuestion: React.FC<OpeningGuessQuestionProps> = ({
         🎵
       </div>
     </AbsoluteFill>
-  );
-};
+  )
+}

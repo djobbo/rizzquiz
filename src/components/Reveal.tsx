@@ -1,19 +1,26 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "remotion"
 
-export const Reveal: React.FC<{
-  correctAnswer: number;
-  options: string[];
-  questionNumber: number;
-  totalQuestions: number;
-}> = ({ correctAnswer, options, questionNumber, totalQuestions }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+type RevealProps = {
+  readonly correctAnswer: number
+  readonly options: string[]
+  readonly questionNumber: number
+  readonly totalQuestions: number
+}
+
+export const Reveal = ({
+  correctAnswer,
+  options,
+  questionNumber,
+  totalQuestions,
+}: RevealProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <div
@@ -29,19 +36,13 @@ export const Reveal: React.FC<{
       }}
     >
       <h1 style={{ margin: 0 }}>Answer:</h1>
-      <p style={{ margin: "20px 0", fontSize: 48 }}>
-        {options[correctAnswer]}
-      </p>
+      <p style={{ margin: "20px 0", fontSize: 48 }}>{options[correctAnswer]}</p>
       {questionNumber < totalQuestions && (
-        <p style={{ fontSize: 32, opacity: 0.8 }}>
-          Next question in 3...
-        </p>
+        <p style={{ fontSize: 32, opacity: 0.8 }}>Next question in 3...</p>
       )}
       {questionNumber === totalQuestions && (
-        <p style={{ fontSize: 32, opacity: 0.8 }}>
-          Quiz Complete! 🎉
-        </p>
+        <p style={{ fontSize: 32, opacity: 0.8 }}>Quiz Complete! 🎉</p>
       )}
     </div>
-  );
-};
+  )
+}

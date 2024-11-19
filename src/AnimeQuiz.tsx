@@ -1,19 +1,18 @@
-import {
-  AbsoluteFill,
-  Sequence,
-} from "remotion";
-import { QuizSection } from "./components/QuizSection";
-import { GradientBackground } from "./components/GradientBackground";
-import { z } from "zod";
-import { quizSchema } from "./types/quiz";
+import { AbsoluteFill, Sequence } from "remotion"
+import { QuizSection } from "./components/QuizSection"
+import { GradientBackground } from "./components/GradientBackground"
+import { z } from "zod"
+import { quizSchema } from "./types/quiz"
 
-const FRAMES_PER_QUESTION = 150;
+const FRAMES_PER_QUESTION = 150
 
-export const AnimeQuiz: React.FC<z.infer<typeof quizSchema>> = ({
+type AnimeQuizProps = z.infer<typeof quizSchema>
+
+export const AnimeQuiz = ({
   questions,
   backgroundColor,
   accentColor,
-}) => {
+}: AnimeQuizProps) => {
   return (
     <AbsoluteFill
       style={{
@@ -36,5 +35,5 @@ export const AnimeQuiz: React.FC<z.infer<typeof quizSchema>> = ({
         </Sequence>
       ))}
     </AbsoluteFill>
-  );
-};
+  )
+}

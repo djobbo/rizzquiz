@@ -1,19 +1,18 @@
-import { useCurrentFrame, useVideoConfig } from "remotion";
-import { interpolate } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion"
+import { interpolate } from "remotion"
 
-export const QuizTimer: React.FC<{
-  duration: number;
-  accentColor: string;
-}> = ({ duration, accentColor }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  
-  const progress = interpolate(
-    frame,
-    [0, duration * fps],
-    [100, 0],
-    { extrapolateRight: "clamp" }
-  );
+type QuizTimerProps = {
+  readonly duration: number
+  readonly accentColor: string
+}
+
+export const QuizTimer = ({ duration, accentColor }: QuizTimerProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
+
+  const progress = interpolate(frame, [0, duration * fps], [100, 0], {
+    extrapolateRight: "clamp",
+  })
 
   return (
     <div
@@ -37,5 +36,5 @@ export const QuizTimer: React.FC<{
         }}
       />
     </div>
-  );
-};
+  )
+}

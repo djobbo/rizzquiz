@@ -1,21 +1,18 @@
-
-import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion"
 
 interface QuoteQuestionProps {
-  readonly partialQuote: string;
+  readonly partialQuote: string
 }
 
-export const QuoteQuestion: React.FC<QuoteQuestionProps> = ({
-  partialQuote,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+export const QuoteQuestion = ({ partialQuote }: QuoteQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <AbsoluteFill
@@ -24,7 +21,8 @@ export const QuoteQuestion: React.FC<QuoteQuestionProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%)",
+        background:
+          "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%)",
       }}
     >
       <div
@@ -40,5 +38,5 @@ export const QuoteQuestion: React.FC<QuoteQuestionProps> = ({
         "{partialQuote}..."
       </div>
     </AbsoluteFill>
-  );
-};
+  )
+}

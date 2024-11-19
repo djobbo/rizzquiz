@@ -1,13 +1,10 @@
-
-import { AbsoluteFill, Video } from "remotion";
+import { AbsoluteFill, Video } from "remotion"
 
 interface MoveGuessQuestionProps {
-  readonly moveClip: string;
+  readonly moveClip: string
 }
 
-export const MoveGuessQuestion: React.FC<MoveGuessQuestionProps> = ({
-  moveClip,
-}) => {
+export const MoveGuessQuestion = ({ moveClip }: MoveGuessQuestionProps) => {
   return (
     <AbsoluteFill
       style={{
@@ -23,5 +20,5 @@ export const MoveGuessQuestion: React.FC<MoveGuessQuestionProps> = ({
         }}
       />
     </AbsoluteFill>
-  );
-};
+  )
+}

@@ -1,23 +1,28 @@
-
-import { AbsoluteFill, Video, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import {
+  AbsoluteFill,
+  Video,
+  spring,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion"
 
 interface SubVsDubQuestionProps {
-  readonly subClip: string;
-  readonly dubClip: string;
+  readonly subClip: string
+  readonly dubClip: string
 }
 
-export const SubVsDubQuestion: React.FC<SubVsDubQuestionProps> = ({
+export const SubVsDubQuestion = ({
   subClip,
   dubClip,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+}: SubVsDubQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <AbsoluteFill
@@ -73,5 +78,5 @@ export const SubVsDubQuestion: React.FC<SubVsDubQuestionProps> = ({
         </div>
       </div>
     </AbsoluteFill>
-  );
-};
+  )
+}

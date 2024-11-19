@@ -1,18 +1,24 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "remotion"
 
-export const QuestionCounter: React.FC<{
-  current: number;
-  total: number;
-  accentColor: string;
-}> = ({ current, total, accentColor }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+type QuestionCounterProps = {
+  readonly current: number
+  readonly total: number
+  readonly accentColor: string
+}
+
+export const QuestionCounter = ({
+  current,
+  total,
+  accentColor,
+}: QuestionCounterProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <div
@@ -29,5 +35,5 @@ export const QuestionCounter: React.FC<{
     >
       {current} / {total}
     </div>
-  );
-};
+  )
+}

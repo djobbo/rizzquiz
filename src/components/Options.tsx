@@ -1,12 +1,14 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "remotion"
 
-export const Options: React.FC<{
-  options: string[];
-  correctAnswer: number;
-  accentColor: string;
-}> = ({ options, accentColor }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+type OptionsProps = {
+  readonly options: string[]
+  readonly correctAnswer: number
+  readonly accentColor: string
+}
+
+export const Options = ({ options, accentColor }: OptionsProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   return (
     <div
@@ -21,12 +23,12 @@ export const Options: React.FC<{
       }}
     >
       {options.map((option, index) => {
-        const delay = index * 5;
+        const delay = index * 5
         const scale = spring({
           frame: frame - delay,
           fps,
           config: { mass: 0.5, damping: 10 },
-        });
+        })
 
         return (
           <div
@@ -46,8 +48,8 @@ export const Options: React.FC<{
           >
             {option}
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}

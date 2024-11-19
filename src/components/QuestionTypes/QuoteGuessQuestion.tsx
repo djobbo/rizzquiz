@@ -1,21 +1,19 @@
-import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion"
 
 interface QuoteGuessQuestionProps {
-  readonly quote: string;
-  readonly character: string;
+  readonly quote: string
+  readonly character: string
 }
 
-export const QuoteGuessQuestion: React.FC<QuoteGuessQuestionProps> = ({
-  quote,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+export const QuoteGuessQuestion = ({ quote }: QuoteGuessQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <AbsoluteFill
@@ -24,7 +22,8 @@ export const QuoteGuessQuestion: React.FC<QuoteGuessQuestionProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)",
+        background:
+          "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)",
       }}
     >
       <div
@@ -40,5 +39,5 @@ export const QuoteGuessQuestion: React.FC<QuoteGuessQuestionProps> = ({
         "{quote}"
       </div>
     </AbsoluteFill>
-  );
-};
+  )
+}

@@ -1,13 +1,12 @@
-
-import { AbsoluteFill, Img } from "remotion";
+import { AbsoluteFill, Img } from "remotion"
 
 interface SilhouetteQuestionProps {
-  readonly characterImage: string;
+  readonly characterImage: string
 }
 
-export const SilhouetteQuestion: React.FC<SilhouetteQuestionProps> = ({
+export const SilhouetteQuestion = ({
   characterImage,
-}) => {
+}: SilhouetteQuestionProps) => {
   return (
     <AbsoluteFill
       style={{
@@ -27,5 +26,5 @@ export const SilhouetteQuestion: React.FC<SilhouetteQuestionProps> = ({
         }}
       />
     </AbsoluteFill>
-  );
-};
+  )
+}

@@ -1,20 +1,20 @@
-import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion"
 
 interface EmojiLoreQuestionProps {
-  readonly emojiSequence: string;
+  readonly emojiSequence: string
 }
 
-export const EmojiLoreQuestion: React.FC<EmojiLoreQuestionProps> = ({
+export const EmojiLoreQuestion = ({
   emojiSequence,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+}: EmojiLoreQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <AbsoluteFill
@@ -36,5 +36,5 @@ export const EmojiLoreQuestion: React.FC<EmojiLoreQuestionProps> = ({
         {emojiSequence.split("")}
       </div>
     </AbsoluteFill>
-  );
-};
+  )
+}

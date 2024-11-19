@@ -1,21 +1,24 @@
-
-import { AbsoluteFill, Img, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import {
+  AbsoluteFill,
+  Img,
+  spring,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion"
 
 interface FirstFrameQuestionProps {
-  readonly frameImage: string;
+  readonly frameImage: string
 }
 
-export const FirstFrameQuestion: React.FC<FirstFrameQuestionProps> = ({
-  frameImage,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+export const FirstFrameQuestion = ({ frameImage }: FirstFrameQuestionProps) => {
+  const frame = useCurrentFrame()
+  const { fps } = useVideoConfig()
 
   const scale = spring({
     frame,
     fps,
     config: { mass: 0.5, damping: 10 },
-  });
+  })
 
   return (
     <AbsoluteFill
@@ -43,5 +46,5 @@ export const FirstFrameQuestion: React.FC<FirstFrameQuestionProps> = ({
         />
       </div>
     </AbsoluteFill>
-  );
-};
+  )
+}

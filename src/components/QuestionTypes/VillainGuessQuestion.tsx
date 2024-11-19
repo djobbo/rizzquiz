@@ -1,15 +1,14 @@
-
-import { AbsoluteFill, Img } from "remotion";
+import { AbsoluteFill, Img } from "remotion"
 
 interface VillainGuessQuestionProps {
-  readonly villainImage: string;
-  readonly blurAmount: number;
+  readonly villainImage: string
+  readonly blurAmount: number
 }
 
-export const VillainGuessQuestion: React.FC<VillainGuessQuestionProps> = ({
+export const VillainGuessQuestion = ({
   villainImage,
   blurAmount,
-}) => {
+}: VillainGuessQuestionProps) => {
   return (
     <AbsoluteFill
       style={{
@@ -29,5 +28,5 @@ export const VillainGuessQuestion: React.FC<VillainGuessQuestionProps> = ({
         }}
       />
     </AbsoluteFill>
-  );
-};
+  )
+}
