@@ -17,6 +17,7 @@ export const GradientBackground = ({
   return (
     <AbsoluteFill
       style={{
+        opacity: 0.5,
         background: `
           linear-gradient(
             ${rotation}deg,

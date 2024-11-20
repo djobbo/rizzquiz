@@ -3,6 +3,10 @@ import { QuizSection } from "./components/QuizSection"
 import { GradientBackground } from "./components/GradientBackground"
 import { z } from "zod"
 import { quizSchema } from "./types/quiz"
+import { SpeedLines } from "./components/SpeedLines"
+
+import { loadFont } from "@remotion/google-fonts/BebasNeue"
+const { fontFamily } = loadFont()
 
 const FRAMES_PER_QUESTION = 150
 
@@ -17,9 +21,11 @@ export const AnimeQuiz = ({
     <AbsoluteFill
       style={{
         backgroundColor,
+        fontFamily,
       }}
     >
       <GradientBackground accentColor={accentColor} />
+      <SpeedLines color={accentColor} style={{ opacity: 0.25 }} />
       {questions.map((question, index) => (
         <Sequence
           key={index}

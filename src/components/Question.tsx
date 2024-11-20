@@ -19,17 +19,17 @@ export const Question = ({ text, accentColor }: QuestionProps) => {
     <div
       style={{
         position: "absolute",
-        top: "62%",
+        top: "50%",
+        transform: `scale(${scale}) translateY(-50%)`,
         width: "100%",
         textAlign: "center",
-        transform: `scale(${scale})`,
       }}
     >
       <h1
         style={{
-          fontSize: 48,
+          fontSize: 96,
           color: accentColor,
-          textShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
+          // textShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
           margin: 0,
           padding: "0 20px",
         }}

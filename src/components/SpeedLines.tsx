@@ -11,7 +11,7 @@ type SpeedLinesProps = {
 }
 
 export const SpeedLines = ({ style, color }: SpeedLinesProps) => {
-  const speedLines = staticFile("assets/media/speedlines.mp4")
+  const speedLines = staticFile("assets/speedlines.mp4")
   const canvas = useRef<HTMLCanvasElement>(null)
   const { width, height } = useVideoConfig()
 

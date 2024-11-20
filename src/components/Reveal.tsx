@@ -2,7 +2,7 @@ import { spring, useCurrentFrame, useVideoConfig } from "remotion"
 
 type RevealProps = {
   readonly correctAnswer: number
-  readonly options: string[]
+  readonly options: { title: string; image?: string }[]
   readonly questionNumber: number
   readonly totalQuestions: number
 }
@@ -22,6 +22,8 @@ export const Reveal = ({
     config: { mass: 0.5, damping: 10 },
   })
 
+  const correctOption = options[correctAnswer]
+
   return (
     <div
       style={{
@@ -36,7 +38,7 @@ export const Reveal = ({
       }}
     >
       <h1 style={{ margin: 0 }}>Answer:</h1>
-      <p style={{ margin: "20px 0", fontSize: 48 }}>{options[correctAnswer]}</p>
+      <p style={{ margin: "20px 0", fontSize: 48 }}>{correctOption.title}</p>
       {questionNumber < totalQuestions && (
         <p style={{ fontSize: 32, opacity: 0.8 }}>Next question in 3...</p>
       )}

@@ -1,6 +1,8 @@
 import { Composition, staticFile } from "remotion"
 import { AnimeQuiz } from "./AnimeQuiz"
 import { quizSchema } from "./types/quiz"
+import { anime } from "./data/anime"
+import { characters } from "./data/characters"
 
 export const RemotionRoot = () => {
   return (
@@ -18,7 +20,12 @@ export const RemotionRoot = () => {
             {
               type: "silhouette",
               question: "Who Dis? 🚨",
-              options: ["Goku", "Naruto", "Luffy", "Ichigo"],
+              options: [
+                characters.Goku,
+                characters.Naruto,
+                characters.Luffy,
+                characters.Ichigo,
+              ],
               correctAnswer: 1,
               characterImage: staticFile("assets/naruto.png"),
               emoji: "👤",
@@ -27,18 +34,23 @@ export const RemotionRoot = () => {
               type: "emojiLore",
               question: "What anime is this? 🤔",
               emojiSequence: "⚔️🤺🔥",
-              options: ["Demon Slayer", "Bleach", "Fire Force", "Black Clover"],
+              options: [
+                anime.DemonSlayer,
+                anime.Bleach,
+                anime.FireForce,
+                anime.BlackClover,
+              ],
               correctAnswer: 0,
               emoji: "📱",
             },
-            {
-              type: "moveGuess",
-              question: "Name this move! ⚡",
-              options: ["Rasengan", "Chidori", "Spirit Gun", "Dragon Fist"],
-              correctAnswer: 0,
-              moveClip: "assets/rasengan.mp4",
-              emoji: "💥",
-            },
+            // {
+            //   type: "moveGuess",
+            //   question: "Name this move! ⚡",
+            //   options: ["Rasengan", "Chidori", "Spirit Gun", "Dragon Fist"],
+            //   correctAnswer: 0,
+            //   moveClip: "assets/rasengan.mp4",
+            //   emoji: "💥",
+            // },
           ],
           backgroundColor: "#1A1A2d",
           accentColor: "#FF00FF",

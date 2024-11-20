@@ -1,7 +1,7 @@
 import { spring, useCurrentFrame, useVideoConfig } from "remotion"
 
 type OptionsProps = {
-  readonly options: string[]
+  readonly options: { title: string; image?: string }[]
   readonly correctAnswer: number
   readonly accentColor: string
 }
@@ -14,12 +14,14 @@ export const Options = ({ options, accentColor }: OptionsProps) => {
     <div
       style={{
         position: "absolute",
-        top: "75%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: 20,
+        top: "60%",
+        width: "80%",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridAutoRows: "1fr",
+        gap: 80,
       }}
     >
       {options.map((option, index) => {
@@ -32,7 +34,7 @@ export const Options = ({ options, accentColor }: OptionsProps) => {
 
         return (
           <div
-            key={option}
+            key={option.title}
             style={{
               transform: `scale(${scale})`,
               backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -40,13 +42,17 @@ export const Options = ({ options, accentColor }: OptionsProps) => {
               borderRadius: 25,
               border: `2px solid ${accentColor}`,
               color: "#fff",
-              fontSize: 24,
+              fontSize: 48,
               cursor: "pointer",
-              width: "70%",
+              width: "400px",
+              height: "200px",
               textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            {option}
+            {option.title}
           </div>
         )
       })}

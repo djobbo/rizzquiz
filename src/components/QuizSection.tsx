@@ -91,6 +91,12 @@ export const QuizSection = ({
     config: { mass: 0.5, damping: 10 },
   })
 
+  const options = question.options.map((option) =>
+    typeof option === "string"
+      ? { title: option }
+      : { title: option.name, image: option.images.main },
+  )
+
   return (
     <AbsoluteFill style={{ opacity }}>
       <div style={{ height: "60%", position: "relative" }}>
@@ -109,7 +115,7 @@ export const QuizSection = ({
 
       <Sequence from={30}>
         <Options
-          options={question.options}
+          options={options}
           correctAnswer={question.correctAnswer}
           accentColor={accentColor}
         />
@@ -118,7 +124,7 @@ export const QuizSection = ({
       <Sequence from={120}>
         <Reveal
           correctAnswer={question.correctAnswer}
-          options={question.options}
+          options={options}
           questionNumber={questionNumber}
           totalQuestions={totalQuestions}
         />
