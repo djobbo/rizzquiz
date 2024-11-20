@@ -2,13 +2,23 @@ import { z } from "zod"
 import { zColor } from "@remotion/zod-types"
 
 export const characterSchema = z.object({
+  anilistId: z.number(),
   name: z.string(),
+  shortName: z.string(),
   images: z.object({
     main: z.string(),
-    transparent: z.string(),
+    transparent: z.string().nullable(),
   }),
-  color: z.string(),
+  color: z.string().nullable(),
   quotes: z.array(z.string()),
+  ages: z.array(
+    z.object({
+      age: z.number(),
+      modifier: z.string().optional(),
+      reason: z.string().optional(),
+    }),
+  ),
+  gender: z.string(),
 })
 
 export type Character = z.infer<typeof characterSchema>

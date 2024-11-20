@@ -43,17 +43,9 @@ export const RemotionRoot = () => {
               correctAnswer: 0,
               emoji: "📱",
             },
-            // {
-            //   type: "moveGuess",
-            //   question: "Name this move! ⚡",
-            //   options: ["Rasengan", "Chidori", "Spirit Gun", "Dragon Fist"],
-            //   correctAnswer: 0,
-            //   moveClip: "assets/rasengan.mp4",
-            //   emoji: "💥",
-            // },
           ],
           backgroundColor: "#1A1A2d",
-          accentColor: "#FF00FF",
+          accentColor: "#FF9AA2",
         }}
       />
     </>

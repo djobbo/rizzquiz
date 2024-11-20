@@ -94,7 +94,10 @@ export const QuizSection = ({
   const options = question.options.map((option) =>
     typeof option === "string"
       ? { title: option }
-      : { title: option.name, image: option.images.main },
+      : {
+          title: "shortName" in option ? option.shortName : option.name,
+          image: option.images.main,
+        },
   )
 
   return (
