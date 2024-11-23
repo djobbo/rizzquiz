@@ -1,5 +1,5 @@
 import { AbsoluteFill, Sequence } from "remotion"
-import { QuizSection } from "./components/QuizSection"
+import { QuizLayout } from "./components/QuizLayout"
 import { GradientBackground } from "./components/GradientBackground"
 import { z } from "zod"
 import { quizSchema } from "./types/quiz"
@@ -32,7 +32,7 @@ export const AnimeQuiz = ({
           from={index * FRAMES_PER_QUESTION}
           durationInFrames={FRAMES_PER_QUESTION}
         >
-          <QuizSection
+          <QuizLayout
             question={question}
             accentColor={accentColor}
             questionNumber={index + 1}

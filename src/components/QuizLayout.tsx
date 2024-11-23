@@ -10,16 +10,16 @@ import { Question } from "./Question"
 import { Options } from "./Options"
 import { Reveal } from "./Reveal"
 import { QuestionCounter } from "./QuestionCounter"
-import { SilhouetteQuestion } from "./QuestionTypes/SilhouetteQuestion"
-import { EmojiLoreQuestion } from "./QuestionTypes/EmojiLoreQuestion"
-import { MoveGuessQuestion } from "./QuestionTypes/MoveGuessQuestion"
-import { QuoteQuestion } from "./QuestionTypes/QuoteQuestion"
-import { OpeningGuessQuestion } from "./QuestionTypes/OpeningGuessQuestion"
-import { QuoteGuessQuestion } from "./QuestionTypes/QuoteGuessQuestion"
-import { FactCheckQuestion } from "./QuestionTypes/FactCheckQuestion"
-import { VillainGuessQuestion } from "./QuestionTypes/VillainGuessQuestion"
-import { FirstFrameQuestion } from "./QuestionTypes/FirstFrameQuestion"
-import { SubVsDubQuestion } from "./QuestionTypes/SubVsDubQuestion"
+import { SilhouetteQuestion } from "./QuestionTypesOld/SilhouetteQuestion"
+import { EmojiLoreQuestion } from "./QuestionTypesOld/EmojiLoreQuestion"
+import { MoveGuessQuestion } from "./QuestionTypesOld/MoveGuessQuestion"
+import { QuoteQuestion } from "./QuestionTypesOld/QuoteQuestion"
+import { OpeningGuessQuestion } from "./QuestionTypesOld/OpeningGuessQuestion"
+import { QuoteGuessQuestion } from "./QuestionTypesOld/QuoteGuessQuestion"
+import { FactCheckQuestion } from "./QuestionTypesOld/FactCheckQuestion"
+import { VillainGuessQuestion } from "./QuestionTypesOld/VillainGuessQuestion"
+import { FirstFrameQuestion } from "./QuestionTypesOld/FirstFrameQuestion"
+import { SubVsDubQuestion } from "./QuestionTypesOld/SubVsDubQuestion"
 import { questionSchema } from "../types/quiz"
 import { z } from "zod"
 
@@ -76,7 +76,7 @@ const QuestionContent = ({ question }: QuestionContentProps) => {
   }
 }
 
-export const QuizSection = ({
+export const QuizLayout = ({
   question,
   accentColor,
   questionNumber,
