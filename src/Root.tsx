@@ -1,3 +1,5 @@
+import "./style.css"
+
 import { Composition, staticFile } from "remotion"
 import { AnimeQuiz } from "./AnimeQuiz"
 import { quizSchema } from "./types/quiz"
@@ -10,7 +12,7 @@ export const RemotionRoot = () => {
       <Composition
         id="AnimeQuiz"
         component={AnimeQuiz}
-        durationInFrames={450}
+        durationInFrames={720}
         fps={30}
         width={1080}
         height={1920}
@@ -44,8 +46,8 @@ export const RemotionRoot = () => {
               emoji: "📱",
             },
           ],
-          backgroundColor: "#1A1A2d",
-          accentColor: "#FF9AA2",
+          backgroundColor: "#8346EC",
+          accentColor: "#5013B9",
         }}
       />
     </>

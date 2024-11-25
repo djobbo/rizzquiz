@@ -49,6 +49,7 @@ export const SpeedLines = ({ style, color }: SpeedLinesProps) => {
     <AbsoluteFill style={style}>
       <AbsoluteFill>
         <OffthreadVideo
+          pauseWhenBuffering
           playbackRate={0.25}
           style={{ opacity: 0 }}
           src={speedLines}

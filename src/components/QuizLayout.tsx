@@ -5,7 +5,7 @@ import {
   spring,
   Sequence,
 } from "remotion"
-import { QuizTimer } from "./QuizTimer"
+import { Timer } from "./quiz/timer"
 import { Question } from "./Question"
 import { Options } from "./Options"
 import { Reveal } from "./Reveal"
@@ -27,7 +27,7 @@ type QuizSectionProps = {
   readonly question: z.infer<typeof questionSchema>
   readonly accentColor: string
   readonly questionNumber: number
-  readonly totalQuestions: number
+  readonly questionsCount: number
 }
 
 type QuestionContentProps = {
@@ -80,7 +80,7 @@ export const QuizLayout = ({
   question,
   accentColor,
   questionNumber,
-  totalQuestions,
+  questionsCount: totalQuestions,
 }: QuizSectionProps) => {
   const frame = useCurrentFrame()
   const { fps } = useVideoConfig()
@@ -108,7 +108,7 @@ export const QuizLayout = ({
           total={totalQuestions}
           accentColor={accentColor}
         />
-        <QuizTimer duration={5} accentColor={accentColor} />
+        <Timer duration={5} accentColor={accentColor} />
         <QuestionContent question={question} />
       </div>
 
