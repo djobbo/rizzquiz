@@ -10,6 +10,7 @@
     "check:types": "tsc --noEmit"
   },
   "dependencies": {
+    "@remotion/animated-emoji": "^4.0.231",
     "@remotion/cli": "4.0.231",
     "@remotion/google-fonts": "4.0.231",
     "@remotion/paths": "4.0.231",
@@ -17,9 +18,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "react": "18.3.1",
-    "react-canvas-confetti": "^2.0.7",
-    "react-confetti": "^6.1.0",
-    "react-confetti-explosion": "^2.1.2",
     "react-dom": "18.3.1",
     "remotion": "4.0.231",
     "tailwind-merge": "^2.5.4",

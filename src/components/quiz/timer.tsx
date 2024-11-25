@@ -1,13 +1,15 @@
 import { useCurrentFrame, useVideoConfig } from "remotion"
 import { interpolate } from "remotion"
 import { Title } from "../title"
+import { cn } from "../../helpers/cn"
 
 type TimerProps = {
   readonly duration: number
   readonly title: string
+  readonly isMobileView: boolean
 }
 
-export const Timer = ({ duration, title }: TimerProps) => {
+export const Timer = ({ duration, title, isMobileView }: TimerProps) => {
   const frame = useCurrentFrame()
   const { fps } = useVideoConfig()
 
@@ -17,12 +19,12 @@ export const Timer = ({ duration, title }: TimerProps) => {
 
   return (
     <div
-      className="relative h-12 rounded-full border-[16px]"
+      className={cn("relative h-12 rounded-full border-[16px]", {
+        "top-16 inset-x-16": isMobileView,
+        "top-8 inset-x-8": !isMobileView,
+      })}
       style={{
         position: "absolute",
-        top: 64,
-        left: 64,
-        right: 64,
         height: 80,
         backgroundColor: "#8346EC",
       }}

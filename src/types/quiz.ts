@@ -141,4 +141,5 @@ export const quizSchema = z.object({
   questions: z.array(questionSchema),
   backgroundColor: zColor(),
   accentColor: zColor(),
+  isMobileView: z.boolean(),
 })
