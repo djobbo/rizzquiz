@@ -10,30 +10,30 @@
     "check:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@remotion/animated-emoji": "^4.0.231",
-    "@remotion/cli": "4.0.231",
-    "@remotion/google-fonts": "4.0.231",
-    "@remotion/media-utils": "^4.0.231",
-    "@remotion/paths": "4.0.231",
-    "@remotion/zod-types": "4.0.231",
-    "class-variance-authority": "^0.7.0",
+    "@remotion/animated-emoji": "4.0.232",
+    "@remotion/cli": "4.0.232",
+    "@remotion/google-fonts": "4.0.232",
+    "@remotion/media-utils": "4.0.232",
+    "@remotion/paths": "4.0.232",
+    "@remotion/zod-types": "4.0.232",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "remotion": "4.0.231",
-    "tailwind-merge": "^2.5.4",
-    "zod": "3.22.3"
+    "remotion": "4.0.232",
+    "tailwind-merge": "^2.5.5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@remotion/eslint-config": "4.0.231",
-    "@remotion/tailwind": "4.0.231",
-    "@types/bun": "^1.1.13",
-    "@types/react": "18.3.1",
-    "@types/web": "0.0.166",
+    "@remotion/eslint-config": "4.0.232",
+    "@remotion/tailwind": "4.0.232",
+    "@types/bun": "^1.1.14",
+    "@types/react": "^18.3.12",
+    "@types/web": "^0.0.183",
     "eslint": "8.56.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "3.3.3",
+    "prettier": "^3.4.1",
     "tailwindcss": "^3.4.15",
-    "typescript": "5.6.2"
+    "typescript": "^5.7.2"
   }
 }
