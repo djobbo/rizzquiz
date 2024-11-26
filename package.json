@@ -13,6 +13,7 @@
     "@remotion/animated-emoji": "^4.0.231",
     "@remotion/cli": "4.0.231",
     "@remotion/google-fonts": "4.0.231",
+    "@remotion/media-utils": "^4.0.231",
     "@remotion/paths": "4.0.231",
     "@remotion/zod-types": "4.0.231",
     "class-variance-authority": "^0.7.0",

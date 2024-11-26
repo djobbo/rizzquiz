@@ -11,7 +11,8 @@ import { characters } from "./data/characters"
 import { comicFont } from "./helpers/fonts"
 import { Timer } from "./components/quiz/timer"
 import { Transition } from "./components/quiz/transition"
-import { FullVideoAndTitleDisplay } from "./components/quiz/answers/full-video-and-title"
+import { FullVideoAndTitleAnswer } from "./components/quiz/answers/full-video-and-title"
+import { AudioDisplay } from "./components/quiz/displays/audio"
 
 const FRAMES_PER_QUESTION = 150
 
@@ -78,7 +79,7 @@ export const AnimeQuiz = ({
         premountFor={10}
         durationInFrames={10 * fps}
       >
-        <FullVideoAndTitleDisplay
+        <FullVideoAndTitleAnswer
           title="Oshi no ko"
           src={staticFile("assets/.cache/op/oshi-no-ko_op1.mp4")}
           startFrom={55 * fps}
@@ -86,24 +87,14 @@ export const AnimeQuiz = ({
         />
       </Sequence>
       <Sequence from={25 + 20 * fps} durationInFrames={25 + 12.25 * fps}>
-        <Audio src={staticFile("assets/bg-music.mp3")} volume={0.5} />
         <Sequence>
           <Transition pfp={staticFile("assets/pfp/nezu.jpg")} />
         </Sequence>
         <Sequence from={25} premountFor={10}>
-          <Timer
-            isMobileView={isMobileView}
-            duration={11}
-            title="Guess the anime opening"
-          />
-          <FourImages
-            isMobileView={isMobileView}
-            images={[
-              staticFile("assets/anime/oshi-no-ko/op-hard.jpg"),
-              staticFile("assets/anime/oshi-no-ko/op-medium.jpg"),
-              staticFile("assets/anime/oshi-no-ko/op-normal.jpg"),
-              staticFile("assets/anime/oshi-no-ko/op-easy.jpg"),
-            ]}
+          <AudioDisplay
+            src={staticFile("assets/.cache/op/cant.mp4")}
+            volume={0.5}
+            startFrom={30 * fps}
           />
           <Sequence from={11 * fps}>
             <Transition pfp={staticFile("assets/pfp/nezu.jpg")} />

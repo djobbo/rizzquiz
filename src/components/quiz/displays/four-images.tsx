@@ -23,10 +23,10 @@ type FourImagesProps = {
 // 😅 (Grinning Face with Sweat) grin-sweat
 
 const IMAGES_DIFFICULTY = [
-  { title: "Hard", points: 4, color: "#F8333C", emoji: "grinning" }, // 😀
-  { title: "Medium", points: 3, color: "#FCEC52", emoji: "heart-face" }, // 🥰
-  { title: "Normal", points: 2, color: "#30BCED", emoji: "joy" }, // 😂
-  { title: "Easy", points: 1, color: "#06D6A0", emoji: "astonished" }, // 😲
+  { title: "Hard", points: 4, color: "#E63462", emoji: "grinning" }, // 😀
+  { title: "Medium", points: 3, color: "#F28F3B", emoji: "heart-face" }, // 🥰
+  { title: "Normal", points: 2, color: "#00A7E1", emoji: "joy" }, // 😂
+  { title: "Easy", points: 1, color: "#3BB273", emoji: "astonished" }, // 😲
 ] as const
 
 type ImageProps = {
@@ -114,6 +114,7 @@ const Image = ({ src, index, isMobileView }: ImageProps) => {
             style={{
               fontFamily: sansSerifFont,
               fontSize: 72,
+              textShadow: "4px 8px 0px rgba(0, 0, 0, 0.25)",
             }}
           >
             +{4 - index} point{index === 3 ? "" : "s"}
@@ -153,7 +154,7 @@ export const FourImages = ({ images, isMobileView }: FourImagesProps) => {
       className={cn(
         {
           "p-16 grid-cols-1 grid-rows-4": isMobileView,
-          "p-8 grid-cols-2 grid-rows-2 justify-center gap-y-16": !isMobileView,
+          "p-8 grid-cols-2 grid-rows-2 justify-center gap-16": !isMobileView,
         },
         "items-end pt-64",
       )}
@@ -180,7 +181,7 @@ export const FourImages = ({ images, isMobileView }: FourImagesProps) => {
             }}
             className={cn("relative m-1 flex", {
               "flex-row-reverse": isMobileView && index % 2 === 1,
-              "justify-center": !isMobileView,
+              "justify-end": !isMobileView && index % 2 === 0,
             })}
           >
             <Image src={image} index={index} isMobileView={isMobileView} />

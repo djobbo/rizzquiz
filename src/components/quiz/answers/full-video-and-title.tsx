@@ -5,7 +5,7 @@ import { AbsoluteFill, OffthreadVideo } from "remotion"
 import { Title } from "../../title"
 import { shake } from "../../../helpers/shake"
 
-type FullVideoAndTitleDisplayProps = {
+type FullVideoAndTitleAnswerProps = {
   readonly title: string
   readonly src: string
   readonly startFrom?: number
@@ -13,13 +13,13 @@ type FullVideoAndTitleDisplayProps = {
   readonly volume?: number
 }
 
-export const FullVideoAndTitleDisplay = ({
+export const FullVideoAndTitleAnswer = ({
   title,
   src,
-  startFrom,
+  startFrom = 0,
   endAt,
   volume = 1,
-}: FullVideoAndTitleDisplayProps) => {
+}: FullVideoAndTitleAnswerProps) => {
   const frame = useCurrentFrame()
   const { fps } = useVideoConfig()
 
